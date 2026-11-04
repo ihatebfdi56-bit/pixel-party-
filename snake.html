@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Party | Snake</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="shell">
+  <main class="game-page">
+    <div class="topbar">
+      <div class="brand">
+        <span class="meta-label">Pixel Party</span>
+        <strong>Snake</strong>
+      </div>
+      <div class="topbar-actions">
+        <div class="score-pill">Credits: <span data-credit-count>0</span></div>
+        <a class="button ghost" href="shop.html">Shop</a>
+        <a class="button ghost" href="index.html">Main Menu</a>
+        <button class="button primary" id="restartBtn" type="button">Restart</button>
+      </div>
+    </div>
+
+    <section class="game-shell">
+      <div class="game-layout">
+        <div class="stage">
+          <div class="score-row">
+            <div class="score-pill">Score: <span id="score">0</span></div>
+            <div class="score-pill">Best: <span id="bestScore">0</span></div>
+          </div>
+          <div class="snake-stage">
+            <canvas id="board" width="640" height="640" aria-label="Snake board"></canvas>
+            <div class="snake-overlay" id="gameOverOverlay" hidden>
+              <div class="snake-modal">
+                <strong>Snake crashed</strong>
+                <p>You can try again or head back to the menu.</p>
+                <div class="snake-modal-actions">
+                  <button class="button primary" id="overlayRestartBtn" type="button">Restart</button>
+                  <a class="button ghost" href="index.html">Main Menu</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="touch-controls" aria-label="Snake controls">
+            <span class="spacer"></span>
+            <button class="button" data-dir="up" type="button">Up</button>
+            <span class="spacer"></span>
+            <button class="button" data-dir="left" type="button">Left</button>
+            <button class="button" data-dir="down" type="button">Down</button>
+            <button class="button" data-dir="right" type="button">Right</button>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="info-card">
+            <h2>How to play</h2>
+            <p>Use the arrow keys, WASD, or the buttons below to steer. Eat the food, avoid the walls, and don’t run into yourself.</p>
+          </div>
+          <div class="info-card">
+            <h2>Quick tip</h2>
+            <p>Snake is easiest when you keep a loop shape and leave yourself room to turn around the edges.</p>
+          </div>
+          <div class="info-card">
+            <h2>Inventory</h2>
+            <ul class="inventory-list" data-inventory-list></ul>
+            <p class="inventory-empty" data-inventory-empty>Empty</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <script src="watermark.js" defer></script>
+  <script src="party-common.js" defer></script>
+  <script src="snake.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Party | Pong</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="shell">
+  <main class="game-page">
+    <div class="topbar">
+      <div class="brand">
+        <span class="meta-label">Pixel Party</span>
+        <strong>Pong</strong>
+      </div>
+      <div class="topbar-actions">
+        <div class="score-pill">Credits: <span data-credit-count>0</span></div>
+        <a class="button ghost" href="shop.html">Shop</a>
+        <a class="button ghost" href="index.html">Main Menu</a>
+        <button class="button primary" id="restartBtn" type="button">Restart</button>
+      </div>
+    </div>
+
+    <section class="game-shell">
+      <div class="game-layout">
+        <div class="stage">
+          <div class="score-row">
+            <div class="score-pill">Player: <span id="playerScore">0</span></div>
+            <div class="score-pill">CPU: <span id="cpuScore">0</span></div>
+            <div class="score-pill">First to 5 wins</div>
+          </div>
+          <canvas id="game" width="720" height="480" aria-label="Pong game"></canvas>
+          <div class="touch-controls" aria-label="Pong controls">
+            <span class="spacer"></span>
+            <button class="button" id="upBtn" type="button">Up</button>
+            <span class="spacer"></span>
+            <span class="spacer"></span>
+            <button class="button" id="downBtn" type="button">Down</button>
+            <span class="spacer"></span>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="info-card">
+            <h2>How to play</h2>
+            <p>Move your paddle with W/S, the arrow keys, or the buttons. Keep the square ball in play and reach 5 points first.</p>
+          </div>
+          <div class="info-card">
+            <h2>Inventory</h2>
+            <ul class="inventory-list" data-inventory-list></ul>
+            <p class="inventory-empty" data-inventory-empty>Empty</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <script src="watermark.js" defer></script>
+  <script src="party-common.js" defer></script>
+  <script src="pong.js" defer></script>
+</body>
+</html>

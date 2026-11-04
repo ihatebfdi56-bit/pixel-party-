@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Party | World's Easiest</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="shell">
+  <main class="game-page">
+    <div class="topbar">
+      <div class="brand">
+        <span class="meta-label">Pixel Party</span>
+        <strong>World's Easiest</strong>
+      </div>
+      <div class="topbar-actions">
+        <div class="score-pill">Credits: <span data-credit-count>0</span></div>
+        <a class="button ghost" href="shop.html">Shop</a>
+        <a class="button ghost" href="index.html">Main Menu</a>
+        <button class="button primary" id="restartBtn" type="button">Restart Level</button>
+      </div>
+    </div>
+
+    <section class="game-shell">
+      <div class="game-layout">
+        <div class="stage whg-stage">
+          <div class="whg-timer">Time: <span id="timerLabel">22</span>s</div>
+          <div class="whg-run-timer">Run: <span id="runTimerLabel">0:00.0</span></div>
+          <canvas id="game" width="720" height="480" aria-label="World's Easiest game"></canvas>
+          <div class="whg-overlay">
+            <div class="whg-badge">Level <span id="levelLabel">1</span></div>
+            <div class="whg-badge">Deaths <span id="deathsLabel">0</span></div>
+            <div class="whg-badge">Shield <span id="shieldLabel">Ready</span></div>
+          </div>
+          <div class="whg-win-overlay" id="winOverlay" hidden>
+            <div class="whg-win-card">
+              <strong>you win!</strong>
+              <p id="winRewardLabel">+9 credits</p>
+              <p id="finalTimeLabel">Final Time: 0:00.0</p>
+              <div class="snake-modal-actions">
+                <button class="button primary" id="winRestartBtn" type="button">Play Again</button>
+                <a class="button ghost" href="index.html">Main Menu</a>
+              </div>
+            </div>
+          </div>
+          <div class="touch-controls" aria-label="World's Easiest controls">
+            <span class="spacer"></span>
+            <button class="button" data-dir="up" type="button">Up</button>
+            <span class="spacer"></span>
+            <button class="button" data-dir="left" type="button">Left</button>
+            <button class="button" data-dir="down" type="button">Down</button>
+            <button class="button" data-dir="right" type="button">Right</button>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="info-card">
+            <h2>How to play</h2>
+            <p>Move the red cube with WASD, the arrow keys, or the on-screen buttons. Grab every yellow coin, then touch the green goal while avoiding the moving blue circles.</p>
+          </div>
+          <div class="info-card">
+            <h2>Inspired by the classic</h2>
+            <p>This is an original homage built around the same core idea: a red square, blue hazards, and a green finish zone with punishing timing.</p>
+          </div>
+          <div class="info-card">
+            <h2>Inventory</h2>
+            <ul class="inventory-list" data-inventory-list></ul>
+            <p class="inventory-empty" data-inventory-empty>Empty</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <script src="watermark.js" defer></script>
+  <script src="party-common.js" defer></script>
+  <script src="worlds-hardest.js" defer></script>
+</body>
+</html>
